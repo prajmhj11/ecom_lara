@@ -1,0 +1,42 @@
+header{
+    background: url('/img/triangles.svg');
+    background-size: cover;
+    color: white;
+
+    .top-nav{
+        .logo{
+            font-weight: bold;
+            font-size: 28px;
+            a{
+                color: $white;
+                &:hover{
+                    color: darken($color: $white, $amount: 10%);
+                }
+            }
+        }
+        ul{
+            a{
+                color: $white;
+                &:hover{
+                    color: darken($color: $white, $amount: 10%);
+                }
+            }
+            .cart-count {
+                display: inline-block;
+                background: $cart-count;
+                color: $text-color;
+                line-height: 0;
+                border-radius: 50%;
+                font-size: 14px;
+
+                span {
+                  display: inline-block;
+                  padding-top: 50%;
+                  padding-bottom: 50%;
+                  margin-left:6px;
+                  margin-right:6px;
+                }
+              }
+        }
+    }
+}

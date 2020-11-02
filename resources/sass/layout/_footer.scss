@@ -1,0 +1,17 @@
+html{
+    height: 100%;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+footer{
+    background: $gray-background;
+    color: $white;
+    padding: 1rem 0;
+    ul a{
+        color: $white !important;
+    }
+    margin-top: auto;
+}

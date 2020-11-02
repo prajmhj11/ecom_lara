@@ -1,0 +1,22 @@
+.might-like-section {
+    padding: 40px 0 70px;
+    background: $light-gray-background;
+
+    h2 {
+        padding-bottom: 30px;
+    }
+
+    .might-like-product {
+        border: 1px solid #979797;
+        background: white;
+        img{
+            width: 100px;
+            height: 100px;
+            padding: .5rem;
+        }
+    }
+
+    .might-like-product-price {
+        color: $text-color-light;
+    }
+}

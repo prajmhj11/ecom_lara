@@ -1,0 +1,52 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+@import '~admin-lte/dist/css/adminlte.css';
+
+
+@import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "~@fortawesome/fontawesome-free/scss/solid.scss";
+@import "~@fortawesome/fontawesome-free/scss/brands.scss";
+
+
+// Variables
+@import 'variables';
+
+// Responsive
+@import 'responsive';
+
+// Base
+@import 'base/cursor';
+@import 'base/base';
+// @import 'base/helpers';
+// @import 'base/reset';
+// @import 'base/typography';
+// @import 'base/utility';
+
+// Components
+@import 'components/breadcrumbs';
+@import 'components/buttons';
+@import 'components/section-description';
+@import 'components/sidebar';
+@import 'components/might-like';
+@import 'components/form';
+
+// Layout
+@import 'layout/footer';
+@import 'layout/header';
+
+// Pages
+@import 'pages/landing-page';
+@import 'pages/shop';
+@import 'pages/product';
+// @import 'pages/cart';
+@import 'pages/checkout';
+@import 'pages/thankyou';
+
+
+.router-link-exact-active{
+    background-color: $blue !important;
+    color: #fff !important;
+}
