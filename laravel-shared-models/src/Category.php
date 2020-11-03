@@ -11,6 +11,6 @@ class Category extends Model
     protected $table = 'category';
     public function products()
     {
-        return $this->belongsToMany('\Product');
+        return $this->belongsToMany('Product');
     }
 }
