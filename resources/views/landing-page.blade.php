@@ -11,11 +11,11 @@
         <div class="hero container pt-5 pb-5">
             <div class="row">
                 <div class="hero-copy col-12 col-md-6 text-center text-lg-left">
-                    <h1>Css grid Example</h1>
+                    <h1>Laravel Ecommerce Demo</h1>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, neque aliquam molestiae unde facere nobis quia excepturi labore pariatur ipsum nulla doloremque ducimus ab. Blanditiis soluta dolore perspiciatis corporis officiis.</p>
                     <div class="hero-buttons">
-                        <a href="#" class="button button-white">Button 1</a>
-                        <a href="#" class="button button-white">Button 2</a>
+                        <a href="#" class="button button-white">Blog Post</a>
+                        <a href="#" class="button button-white">GitHub</a>
                     </div>
                     <!-- end hero-copy -->
                 </div>

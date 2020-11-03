@@ -34,11 +34,11 @@ class ShopController extends Controller
         }
 
         if(request()->sort == 'low_high'){
-            $products = $products->orderBy('price')->paginate($pagination);
+            $products = $products->orderBy('price')->paginate($pagination)->onEachSide(1);
         }elseif(request()->sort == 'high_low'){
-            $products = $products->orderByDesc('price')->paginate($pagination);
+            $products = $products->orderByDesc('price')->paginate($pagination)->onEachSide(1);
         }else{
-            $products = $products->inRandomOrder()->paginate($pagination);
+            $products = $products->inRandomOrder()->paginate($pagination)->onEachSide(1);
         }
         //dd($products);
         return view('layouts.ecom.shop', compact('products', 'categories', 'categoryName'));

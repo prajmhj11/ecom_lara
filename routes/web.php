@@ -48,12 +48,13 @@ Route::get('/about', function() {
     return view('layouts.ecom.about');
 });
 
+Auth::routes();
+
 // Admin-------
 Route::get('/admin', function () {
     return view('admin');
 });
 
-Auth::routes();
 
 Route::group([], function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -63,7 +64,7 @@ Route::group([], function () {
     Route::get('/developer', [App\Http\Controllers\HomeController::class, 'index'])->name('developer');
 });
 
-//Route::get('/products', [App\Http\Controllers\ProductController::class, 'list'])->name('products');
+// Route::get('/products', [App\Http\Controllers\ProductController::class, 'list'])->name('products');
 // Route::post('/checkout', [App\Http\Controllers\OrderController::class, 'checkout'])->name('checkout');
 
 // Route::any('/esewa/success', 'App\Http\Controllers\EsewaController@success')->name('esewa.success');
