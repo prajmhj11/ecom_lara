@@ -11,6 +11,7 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable;
 
+    protected $table = 'peoples';
     /**
      * The attributes that are mass assignable.
      *
@@ -21,7 +22,6 @@ class User extends Authenticatable
         'email',
         'password',
     ];
-
     /**
      * The attributes that should be hidden for arrays.
      *
