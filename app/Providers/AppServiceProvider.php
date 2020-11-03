@@ -26,9 +26,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
-        $paginator = new AbstractPaginator();
-        $paginator->onEachSide(1);
-        Paginator::useBootstrap();
+        AbstractPaginator::useBootstrap();
     }
 }
+
+
