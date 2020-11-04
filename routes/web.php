@@ -51,7 +51,7 @@ Route::get('/about', function() {
 Auth::routes();
 
 // Admin-------
-Route::get('/admin', function () {
+Route::get('/adminpanel', function () {
     return view('admin');
 });
 
@@ -77,3 +77,9 @@ Route::group([], function () {
 // Route::get('/stripe-checkout', function(){ return view('layouts.payment-integration.stripe-checkout');})->name('stripe.checkout');
 // Route::get('stripe-payment', 'App\Http\Controllers\StripeController@handleGet');
 // Route::post('stripe-payment', 'App\Http\Controllers\StripeController@handlePost')->name('stripe.payment');
+
+
+// Vayoger Admin
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
