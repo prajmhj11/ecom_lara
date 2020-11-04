@@ -6,14 +6,6 @@
         "framework",
         "laravel"
     ],
-    "homepage": "http://tutorial.com",
-    "authors": [
-        {
-            "name": "Prajwol Maharjan",
-            "email": "praj.mhj11@gmail.com",
-            "role": "admin"
-        }
-    ],
     "license": "MIT",
     "require": {
         "php": "^7.3",
@@ -51,8 +43,7 @@
         "psr-4": {
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
-            "Database\\Seeders\\": "database/seeders/",
-            "Laravel\\SharedModels\\": "src"
+            "Database\\Seeders\\": "database/seeders/"
         }
     },
     "autoload-dev": {
