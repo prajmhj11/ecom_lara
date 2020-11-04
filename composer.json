@@ -1,10 +1,17 @@
 {
-    "name": "laravel/laravel",
+    "name": "prajmhj11/ecom-lara",
     "type": "project",
     "description": "The Laravel Framework.",
     "keywords": [
         "framework",
         "laravel"
+    ],
+    "authors": [
+        {
+            "name": "Prajwol Maharjan",
+            "email": "praj.mhj11@gmail.com",
+            "role": "admin"
+        }
     ],
     "license": "MIT",
     "require": {
@@ -48,7 +55,8 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\": "tests/"
+            "Tests\\": "tests/",
+            "Tutorial\\SharedModels\\": "app/models/"
         }
     },
     "minimum-stability": "dev",
