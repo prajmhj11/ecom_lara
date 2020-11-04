@@ -6,13 +6,6 @@
         "framework",
         "laravel"
     ],
-    "authors": [
-        {
-            "name": "Prajwol Maharjan",
-            "email": "praj.mhj11@gmail.com",
-            "role": "admin"
-        }
-    ],
     "license": "MIT",
     "require": {
         "php": "^7.3",
@@ -49,7 +42,6 @@
         ],
         "psr-4": {
             "App\\": "app/",
-            "Tutorial\\SharedModels\\": "app/models/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
         }

@@ -1,0 +1,17 @@
+{
+    "name": "prajmhj11/ecom-models",
+    "type": "library",
+    "description": "Your package description goes here",
+    "authors": [
+        {
+            "name": "Prajwol Maharjan",
+            "email": "praj.mhj11@gmail.com",
+            "role": "admin"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Laravel\\SharedModels\\": ""
+        }
+    }
+}
