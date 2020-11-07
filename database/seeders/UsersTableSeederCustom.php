@@ -14,7 +14,7 @@ class UsersTableSeederCustom extends Seeder
      */
     public function run()
     {
-        if (User::count() == 0) {
+        if (User::count() > 0) {
             $role = Role::where('name', 'adminweb')->firstOrFail();
 
             User::create([

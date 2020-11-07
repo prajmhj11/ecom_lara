@@ -10,27 +10,12 @@ class PermissionsTableSeederCustom extends Seeder
      */
     public function run()
     {
-        $keys = [
-            'browse_admin',
-            'browse_bread',
-            'browse_database',
-            'browse_media',
-            'browse_compass',
-        ];
+        Permission::generateFor('products');
 
-        foreach ($keys as $key) {
-            Permission::firstOrCreate([
-                'key'        => $key,
-                'table_name' => null,
-            ]);
-        }
+        Permission::generateFor('coupons');
 
-        Permission::generateFor('menus');
+        Permission::generateFor('category');
 
-        Permission::generateFor('roles');
-
-        Permission::generateFor('users');
-
-        Permission::generateFor('settings');
+        Permission::generateFor('category-product');
     }
 }

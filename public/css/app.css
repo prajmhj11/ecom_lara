@@ -48983,11 +48983,12 @@ form button[type=submit] {
   font-size: 16px;
 }
 
-html {
+html,
+head {
   height: 100%;
 }
 
-body {
+#app {
   min-height: 100vh;
   display: flex;
   flex-direction: column;

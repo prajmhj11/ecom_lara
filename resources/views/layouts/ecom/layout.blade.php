@@ -19,13 +19,14 @@
 
 
 <body class="@yield('body-class', '')">
+    <div id="app">
         @include('layouts.ecom.partials.nav')
         <!-- Navigation -->
         @yield('content')
         <!-- Main-Content -->
         @include('layouts.ecom.partials.footer')
         <!-- Footer -->
-
+    </div>
 </body>
 <script src="{{ asset('js/app.js') }}"></script>
 <script>

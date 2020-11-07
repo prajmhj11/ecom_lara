@@ -9,6 +9,7 @@
                 </div>
                 <div class="col-lg-8 top-nav-right">
                     <div class="row text-uppercase justify-content-between">
+                        @if(Route::currentRouteName() != 'checkout.index')
                         <ul class="col-md-5">
                             <div class="d-flex">
                                 <li><a href="{{ route('shop.index') }}">Shop</a></li>
@@ -17,7 +18,6 @@
                             </div>
                         </ul>
 
-                        @if(Route::currentRouteName() != 'checkout.index')
 
                         <ul class="col-md-7">
                             <div class="d-flex justify-content-end">
