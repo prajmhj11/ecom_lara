@@ -1,10 +1,10 @@
 <?php
-
+namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use TCG\Voyager\Models\Menu;
 use TCG\Voyager\Models\MenuItem;
 
-class MenuItemsTableSeeder extends Seeder
+class MenuItemsTableSeederCustom extends Seeder
 {
     /**
      * Auto generated seed file.

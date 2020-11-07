@@ -48934,12 +48934,22 @@ img {
 .might-like-section .might-like-product {
   border: 1px solid #979797;
   background: white;
+  font-size: 14px;
+  height: 100%;
 }
 
 .might-like-section .might-like-product img {
-  width: 100px;
-  height: 100px;
+  width: 86px;
+  height: 86px;
   padding: 0.5rem;
+}
+
+.might-like-section .might-like-product form {
+  padding: 4px 0;
+}
+
+.might-like-section .might-like-product form button {
+  font-size: xx-small !important;
 }
 
 .might-like-section .might-like-product-price {
@@ -49011,6 +49021,21 @@ header .top-nav .logo a {
 
 header .top-nav .logo a:hover {
   color: #d0d0d0;
+}
+
+header .top-nav ul {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 20px;
+}
+
+header .top-nav ul li {
+  margin-right: 38px;
+  font-weight: 400;
+}
+
+header .top-nav ul li:last-child {
+  margin-right: 0;
 }
 
 header .top-nav ul a {
@@ -49104,8 +49129,40 @@ a:link:hover {
   font-weight: bold;
 }
 
+.products .product img {
+  width: auto !important;
+  height: 20vh !important;
+}
+
 .product-section-image {
   padding: 30px;
+}
+
+.product-section-image img {
+  width: auto;
+  height: 30vh;
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out;
+}
+
+.product-section-image img.active {
+  opacity: 1;
+}
+
+.product-section-images {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.product-section-images .selected {
+  border: 1px solid #979797 !important;
+}
+
+.product-section-thumbnail:hover {
+  border: 1px solid #979797 !important;
 }
 
 .product-section-information p {

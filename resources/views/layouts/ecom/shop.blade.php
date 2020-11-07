@@ -17,7 +17,7 @@
     </div> <!-- end breadcrumbs -->
 
     <div class="products-section container my-5">
-    @include('layouts.ecom.partials.alert')
+        @include('layouts.ecom.partials.alert')
         <div class="row">
             <div class="col-md-3 sidebar text-center text-md-left border-bottom border-md-bottom-0">
                 <h3>By Category</h3>
@@ -44,7 +44,7 @@
 
                         @forelse($products as $product)
                             <div class="product">
-                                <a href="{{ route('shop.show', $product->slug) }}"><img src="{{asset('img/products/'.$product->slug.'.jpg')}}" alt="product"></a>
+                                <a href="{{ route('shop.show', $product->slug) }}"><img src="{{ Voyager::image($product->image) }}" alt="{{ $product->slug }}" onerror="this.onerror=null;this.src=`{{asset('img/not-found.jpg')}}`;"></a>
                                 <a href="{{ route('shop.show', $product->slug) }}"><div class="product-name">{{ $product->name }}</div></a>
                                 <div class="product-price cursor-default">{{ $product->presentPrice() }}</div>
                                 <form action="{{route('cart.store')}}" method="post">

@@ -31,7 +31,7 @@
                         <div class="d-flex flex-column flex-md-row text-center text-md-left justify-content-between">
                             <div class="cart-table-row-left col-md-2">
                                 <a href="{{route('shop.show', $item->model->slug)}}">
-                                    <img src="{{ asset('img/products/'.$item->model->slug.'.jpg') }}" alt="item" class="cart-table-img">
+                                    <img src="{{ Voyager::image($item->model->image) }}" alt="{{ $item->model->slug }}" onerror="this.onerror=null;this.src=`{{asset('img/not-found.jpg')}}`;">
                                 </a>
                             </div>
                             <div class="cart-table-row-right col-lg-9">

@@ -39,8 +39,10 @@ Route::get('/empty-saveforlater', function(){
 Route::post('/coupon', [App\Http\Controllers\CouponController::class, 'store'])->name('coupon.store');
 Route::delete('/coupon', [App\Http\Controllers\CouponController::class, 'destroy'])->name('coupon.destroy');
 
-Route::get('/checkout', [App\Http\Controllers\CheckoutController::class, 'index'])->name('checkout.index');
-Route::post('/checkout', [App\Http\Controllers\CheckoutController::class, 'store'])->name('checkout.store');
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/checkout', [App\Http\Controllers\CheckoutController::class, 'index'])->name('checkout.index');
+    Route::post('/checkout', [App\Http\Controllers\CheckoutController::class, 'store'])->name('checkout.store');
+});
 
 Route::get('/thankyou', [App\Http\Controllers\ConfirmationController::class, 'index'])->name('confirmation.index');
 
@@ -63,21 +65,21 @@ Route::group([], function () {
     Route::get('/users', [App\Http\Controllers\HomeController::class, 'index'])->name('users');
     Route::get('/developer', [App\Http\Controllers\HomeController::class, 'index'])->name('developer');
 });
+/*
+    // Route::get('/products', [App\Http\Controllers\ProductController::class, 'list'])->name('products');
+    // Route::post('/checkout', [App\Http\Controllers\OrderController::class, 'checkout'])->name('checkout');
 
-// Route::get('/products', [App\Http\Controllers\ProductController::class, 'list'])->name('products');
-// Route::post('/checkout', [App\Http\Controllers\OrderController::class, 'checkout'])->name('checkout');
+    // Route::any('/esewa/success', 'App\Http\Controllers\EsewaController@success')->name('esewa.success');
+    // Route::any('/esewa/fail', 'App\Http\Controllers\EsewaController@fail')->name('esewa.fail');
+    // Route::get('/payment/response', 'App\Http\Controllers\EsewaController@payment_response')->name('payment.response');
 
-// Route::any('/esewa/success', 'App\Http\Controllers\EsewaController@success')->name('esewa.success');
-// Route::any('/esewa/fail', 'App\Http\Controllers\EsewaController@fail')->name('esewa.fail');
-// Route::get('/payment/response', 'App\Http\Controllers\EsewaController@payment_response')->name('payment.response');
+    // Route::any('fonepay/return', 'App\Http\Controllers\FonepayController@fonepay_response')->name('fonepay.return');
+    // // Route::get('/{any}', [App\Http\Controllers\HomeController::class, 'index'])->where('any', '.*');
 
-// Route::any('fonepay/return', 'App\Http\Controllers\FonepayController@fonepay_response')->name('fonepay.return');
-// // Route::get('/{any}', [App\Http\Controllers\HomeController::class, 'index'])->where('any', '.*');
-
-// Route::get('/stripe-checkout', function(){ return view('layouts.payment-integration.stripe-checkout');})->name('stripe.checkout');
-// Route::get('stripe-payment', 'App\Http\Controllers\StripeController@handleGet');
-// Route::post('stripe-payment', 'App\Http\Controllers\StripeController@handlePost')->name('stripe.payment');
-
+    // Route::get('/stripe-checkout', function(){ return view('layouts.payment-integration.stripe-checkout');})->name('stripe.checkout');
+    // Route::get('stripe-payment', 'App\Http\Controllers\StripeController@handleGet');
+    // Route::post('stripe-payment', 'App\Http\Controllers\StripeController@handlePost')->name('stripe.payment');
+*/
 
 // Vayoger Admin
 Route::group(['prefix' => 'admin'], function () {

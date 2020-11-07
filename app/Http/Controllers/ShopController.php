@@ -20,6 +20,11 @@ class ShopController extends Controller
         $pagination = 6;
         $categories = Category::all();
 
+        if(!(request()->page)){
+            session()->put('rand_seed', ['rand' => RAND()]);
+        }
+        $rand = session()->get('rand_seed')['rand'];
+
         if(request()->category){
             $products = Product::with('categories')->whereHas('categories', function($query){
                 $query->where('slug', request()->category);
@@ -38,9 +43,8 @@ class ShopController extends Controller
         }elseif(request()->sort == 'high_low'){
             $products = $products->orderByDesc('price')->paginate($pagination)->onEachSide(1);
         }else{
-            $products = $products->inRandomOrder()->paginate($pagination)->onEachSide(1);
+            $products = $products->inRandomOrder($rand)->paginate($pagination)->onEachSide(1);
         }
-        //dd($products);
         return view('layouts.ecom.shop', compact('products', 'categories', 'categoryName'));
     }
 

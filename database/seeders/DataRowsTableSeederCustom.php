@@ -1,10 +1,10 @@
 <?php
-
+namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use TCG\Voyager\Models\DataRow;
 use TCG\Voyager\Models\DataType;
 
-class DataRowsTableSeeder extends Seeder
+class DataRowsTableSeederCustom extends Seeder
 {
     /**
      * Auto generated seed file.

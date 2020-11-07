@@ -23,6 +23,7 @@ class CheckoutRequest extends FormRequest
      */
     public function rules()
     {
+        // $emailValidation = Auth::user() ? 'required|email' : 'required|email|unique:users,email';
         return [
             'email' => 'required|email',
             'name' => 'required',
@@ -33,4 +34,12 @@ class CheckoutRequest extends FormRequest
             'phone' => 'required',
         ];
     }
+
+    // public function messages()
+    // {
+    //     return [
+    //          'email.unique' => 'Already have an account. Please <a href='#'>Login</a> to continue';
+    //         'city.required' => "It's required.",
+    //     ];
+    // }
 }

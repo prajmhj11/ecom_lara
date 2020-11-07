@@ -1,9 +1,9 @@
 <?php
-
+namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use TCG\Voyager\Models\Permission;
 
-class PermissionsTableSeeder extends Seeder
+class PermissionsTableSeederCustom extends Seeder
 {
     /**
      * Auto generated seed file.

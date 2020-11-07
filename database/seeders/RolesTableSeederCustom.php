@@ -1,9 +1,9 @@
 <?php
-
+namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use TCG\Voyager\Models\Role;
 
-class RolesTableSeeder extends Seeder
+class RolesTableSeederCustom extends Seeder
 {
     /**
      * Auto generated seed file.

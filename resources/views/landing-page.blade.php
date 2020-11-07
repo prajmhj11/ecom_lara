@@ -44,7 +44,9 @@
                 <div class="row row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cols-1">
                     @foreach ($products as $product)
                     <div class="product">
-                        <a href="{{ route('shop.show', $product->slug) }}"><img src="{{asset('img/products/'.$product->slug.'.jpg')}}" alt="product"></a>
+                        <a href="{{ route('shop.show', $product->slug) }}">
+                            <img src="{{ presentImage( $product->image) }}" alt="{{ $product->slug }}" onerror=`this.onerror="null"; this.src="{{asset('img/triangles.svg')}}"`>
+                        </a>
                         <a href="{{ route('shop.show', $product->slug) }}"><div class="product-name">{{ $product->name }}</div></a>
                         <div class="product-price cursor-default">{{ $product->presentPrice() }}</div>
                         <form action="{{route('cart.store')}}" method="post">

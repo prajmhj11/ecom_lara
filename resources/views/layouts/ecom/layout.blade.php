@@ -19,13 +19,18 @@
 
 
 <body class="@yield('body-class', '')">
-            @include('layouts.ecom.partials.nav')
-
-            @yield('content')
+        @include('layouts.ecom.partials.nav')
+        <!-- Navigation -->
+        @yield('content')
+        <!-- Main-Content -->
         @include('layouts.ecom.partials.footer')
-
+        <!-- Footer -->
 
 </body>
 <script src="{{ asset('js/app.js') }}"></script>
+<script>
+    var scroll = $(window).scrollTop();
+    $('html').scrollTop(scroll);
+</script>
 @yield('extra-js')
 </html>

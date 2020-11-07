@@ -15,6 +15,16 @@ header{
             }
         }
         ul{
+            margin: 0 !important;
+            padding: 0 !important;
+            font-size: 20px;
+            li{
+                margin-right: 38px;
+                font-weight: 400;
+                &:last-child{
+                    margin-right: 0;
+                }
+            }
             a{
                 color: $white;
                 &:hover{

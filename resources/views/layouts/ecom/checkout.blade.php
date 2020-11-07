@@ -9,7 +9,7 @@
 @section('content')
 
     <div class="container my-5">
-            @include('layouts.ecom.partials.alert')
+        @include('layouts.ecom.partials.alert')
 
         <h1 class="checkout-heading stylish-heading">Checkout</h1>
         <div class="checkout-section row m-0 p-0">
@@ -20,11 +20,11 @@
 
                     <div class="form-group">
                         <label for="email">Email Address</label>
-                        <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}" required>
+                        <input type="email" class="form-control" id="email" name="email" value="{{ Auth::user()->email }}" readonly>
                     </div>
                     <div class="form-group">
                         <label for="name">Name</label>
-                        <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" required>
+                        <input type="text" class="form-control" id="name" name="name" value="{{ Auth::user()->name }}" readonly>
                     </div>
                     <div class="form-group">
                         <label for="address">Address</label>
@@ -79,11 +79,11 @@
                 <div class="checkout-table">
                     <div class="checkout-table-row border-top border-bottom d-flex flex-column flex-md-row justify-content-between align-items-center">
                         <div class="checkout-table-row-left w-25 m-3">
-                            <img src="{{ asset('/img/products/'.$item->model->slug.'.jpg') }}" alt="item" class="checkout-table-img">
+                            <img src="{{ Voyager::image($item->model->image) }}" alt="{{ $item->model->slug }}" onerror="this.onerror=null;this.src=`{{asset('img/not-found.jpg')}}`;">
                         </div> <!-- end checkout-table -->
 
                         <div class="checkout-table-row-right flex-fill d-flex justify-content-between align-items-center">
-                            <div class="checkout-item-details">
+                            <div class="checkout-item-details text-center text-md-left">
                                 <div class="checkout-table-item">{{ $item->model->name }}</div>
                                 <div class="checkout-table-description">{{ $item->model->details }}</div>
                                 <div class="checkout-table-price">{{ $item->model->presentPrice() }}</div>

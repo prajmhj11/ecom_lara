@@ -3,7 +3,7 @@
         <h2>You might also like...</h2>
         <div class="might-like-products row text-center m-0 p-0">
             @foreach($mightAlsoLike as $product)
-                <div class="col-6 col-md-3 m-0 p-0 py-2">
+                <div class="col-4 col-lg-2 m-0 p-0 py-2">
                     <div class="might-like-product col-10 offset-1">
                         <a href="{{ route('shop.show', $product->slug) }}">
                             <img src="{{ asset('img/products/'.$product->slug.'.jpg') }}" alt="product">
