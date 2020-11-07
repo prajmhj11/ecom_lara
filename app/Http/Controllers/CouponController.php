@@ -29,7 +29,7 @@ class CouponController extends Controller
             'total' => \Cart::subtotal(),
             'discount' => $coupon->discount(\Cart::subTotal()),
         ]);
-        return redirect()->route('checkout.index')->with('success_message', "Coupon Found and Applied");
+        return redirect()->back()->withInput()->with('success_message', "Coupon Found and Applied");
     }
 
 

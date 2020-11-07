@@ -1,4 +1,4 @@
- <?php
+<?php
 
 namespace App\Console;
 
@@ -24,7 +24,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('ecommerce:install')->hourly();
+        // $schedule->command('ecommerce:install --force')->everyMinute();
     }
 
     /**
