@@ -1,0 +1,12 @@
+body { font-family: sans-serif; }
+.ais-ClearRefinements { margin: 1em 0; }
+.ais-SearchBox { margin: 1em 0; }
+.ais-Pagination { margin-top: 1em; }
+.ais-InstantSearch { max-width: 100%; overflow: hidden; margin: 0 auto; }
+.ais-Hits-item{width: 100% !important;}
+.ais-Hits-item {
+    margin-bottom: 1em; width: 100%
+}
+.ais-Hits-item img { margin-left: 1em; margin-right: 1em; width: auto; height: 100px;}
+.hit-name { margin-bottom: 0.5em; }
+.hit-details { color: #888; font-size: 14px; margin-bottom: 0.5em; }

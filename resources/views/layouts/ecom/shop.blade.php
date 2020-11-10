@@ -3,18 +3,17 @@
 @section('title', 'Products')
 
 @section('extra-css')
-
+<link rel="stylesheet" href="{{asset('css/algolia.css')}}">
 @endsection
 
 @section('content')
 
-    <div class="breadcrumbs text-center text-md-left">
-        <div class="container">
-            <a href="/">Home</a>
-            <i class="fa fa-chevron-right breadcrumb-separator"></i>
-            <span>Shop</span>
-        </div>
-    </div> <!-- end breadcrumbs -->
+    @component('layouts.ecom.components.breadcrumbs')
+        <a href="/">Home</a>
+        <i class="fa fa-chevron-right breadcrumb-separator"></i>
+        <span>Shop</span>
+    @endcomponent
+    <!-- end breadcrumbs component -->
 
     <div class="products-section container my-5">
         @include('layouts.ecom.partials.alert')
@@ -70,5 +69,16 @@
         </div>
     </div>
 
+@endsection
 
+@section('extra-js')
+<!-- Include AlgoliaSearch JS Client and autocomplete.js library -->
+<script src="https://cdn.jsdelivr.net/npm/algoliasearch@3/dist/algoliasearchLite.min.js"></script>
+<script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
+<script src="{{asset('js/algolia.js')}}">
+    function message()
+    {
+        return "hello";
+    }
+</script>
 @endsection

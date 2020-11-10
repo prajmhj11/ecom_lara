@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [App\Http\Controllers\LandingPageController::class, 'index'])->name('landing-page');
 Route::get('/shop', [App\Http\Controllers\ShopController::class, 'index'])->name('shop.index');
 Route::get('/shop/{product}', [App\Http\Controllers\ShopController::class, 'show'])->name('shop.show');
+
+// Laravel Cart
 
 Route::get('/cart', [App\Http\Controllers\CartController::class, 'index'])->name('cart.index');
 Route::post('/cart', [App\Http\Controllers\CartController::class, 'store'])->name('cart.store');
@@ -36,9 +39,12 @@ Route::get('/empty-saveforlater', function(){
     return redirect()->route('cart.index')->with('success_message', 'SaveForLater Emptied');
 });
 
+// Coupon
+
 Route::post('/coupon', [App\Http\Controllers\CouponController::class, 'store'])->name('coupon.store');
 Route::delete('/coupon', [App\Http\Controllers\CouponController::class, 'destroy'])->name('coupon.destroy');
 
+// checkout -> middleware=>auth
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/checkout', [App\Http\Controllers\CheckoutController::class, 'index'])->name('checkout.index');
     Route::post('/checkout', [App\Http\Controllers\CheckoutController::class, 'store'])->name('checkout.store');
@@ -51,6 +57,11 @@ Route::get('/about', function() {
 });
 
 Auth::routes();
+
+
+// Algolia
+Route::get('/search', [App\Http\Controllers\ShopController::class, 'search'])->name('search');
+Route::get('/search-algolia', [App\Http\Controllers\ShopController::class, 'searchAlgolia'])->name('search-algolia');
 
 // Admin-------
 Route::get('/adminpanel', function () {
@@ -65,7 +76,8 @@ Route::group([], function () {
     Route::get('/users', [App\Http\Controllers\HomeController::class, 'index'])->name('users');
     Route::get('/developer', [App\Http\Controllers\HomeController::class, 'index'])->name('developer');
 });
-/*
+/* Payment Integration (E-sewa, Fonepay)
+
     // Route::get('/products', [App\Http\Controllers\ProductController::class, 'list'])->name('products');
     // Route::post('/checkout', [App\Http\Controllers\OrderController::class, 'checkout'])->name('checkout');
 
@@ -75,13 +87,13 @@ Route::group([], function () {
 
     // Route::any('fonepay/return', 'App\Http\Controllers\FonepayController@fonepay_response')->name('fonepay.return');
     // // Route::get('/{any}', [App\Http\Controllers\HomeController::class, 'index'])->where('any', '.*');
-
-    // Route::get('/stripe-checkout', function(){ return view('layouts.payment-integration.stripe-checkout');})->name('stripe.checkout');
-    // Route::get('stripe-payment', 'App\Http\Controllers\StripeController@handleGet');
-    // Route::post('stripe-payment', 'App\Http\Controllers\StripeController@handlePost')->name('stripe.payment');
 */
 
 // Vayoger Admin
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

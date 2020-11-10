@@ -1,0 +1,76 @@
+.auth-pages{
+    margin: 100px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+
+    .left-auth{
+        .login-email, .login-password{
+            position: relative !important;
+            margin: 20px auto;
+            input{
+                padding-left: 46px;
+            }
+            i{
+                position: absolute;
+                top: 12px;
+                left: 12px;
+            }
+
+        }
+        .login-container{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 20px auto;
+
+            button{
+                padding: 8px 40px;
+            }
+        }
+    }
+
+    .right-auth{
+        border-left: 1px solid $separator-color;
+        padding-left: 50px;
+        p{
+            margin-bottom: 0;
+        }
+        a{
+            margin-top: 30px;
+            padding: 8px 40px;
+        }
+    }
+}
+
+.register-pages{
+    margin: 100px auto;
+    display: flex;
+    justify-content: center;
+    .register{
+        text-align: center;
+        width: 50%;
+    }
+    .register-name, .register-email, .register-password, .register-confirm{
+        position: relative !important;
+        margin: 20px auto;
+        input{
+            padding-left: 46px;
+        }
+        i{
+            position: absolute;
+            top: 12px;
+            left: 12px;
+        }
+    }
+    .register-button{
+        padding: 12px 40px;
+        margin-bottom: 1rem;
+    }
+    a{
+        color: lightskyblue;
+        &:hover{
+            color: darkblue;
+        }
+    }
+}

@@ -3,20 +3,20 @@
 @section('title', $product->name)
 
 @section('extra-css')
-
+<link rel="stylesheet" href="{{asset('css/algolia.css')}}">
 @endsection
 
 @section('content')
 
-    <div class="breadcrumbs">
-        <div class="container">
-            <a href="/">Home</a>
-            <i class="fa fa-chevron-right breadcrumb-separator"></i>
-            <a href="{{ route('shop.index')}}">Shop</a>
-            <i class="fa fa-chevron-right breadcrumb-separator"></i>
-            <span>{{ $product->name }}</span>
-        </div>
-    </div> <!-- end breadcrumbs -->
+    @component('layouts.ecom.components.breadcrumbs')
+        <a href="/">Home</a>
+        <i class="fa fa-chevron-right breadcrumb-separator"></i>
+        <a href="{{ route('shop.index')}}">Shop</a>
+        <i class="fa fa-chevron-right breadcrumb-separator"></i>
+        <span>{{ $product->name }}</span>
+    @endcomponent
+    <!-- end breadcrumbs -->
+
 
     <div class="product-section container my-2">
     @include('layouts.ecom.partials.alert')
@@ -62,7 +62,11 @@
 @endsection
 
 @section('extra-js')
-    <script>
+<!-- Include AlgoliaSearch JS Client and autocomplete.js library -->
+<script src="https://cdn.jsdelivr.net/npm/algoliasearch@3/dist/algoliasearchLite.min.js"></script>
+<script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
+<script src="{{asset('js/algolia.js')}}"></script>
+<script>
         $(function(){
             // console.log($('#currentImage')[0]);
             // const currentImage = document.querySelector('#currentImage');
@@ -91,8 +95,6 @@
                 });
                 $(this).addClass("selected");
             }
-
-
         });
-    </script>
+</script>
 @endsection

@@ -1,5 +1,5 @@
 <header>
-    <div class="top-nav container-fluid">
+    <div class="top-nav container-fluid p-0">
         <div class="container">
             <div class="row py-4">
                 <div class="col-lg-4 top-nav-left">
@@ -8,7 +8,7 @@
                     </div>
                 </div>
                 <div class="col-lg-8 top-nav-right">
-                    <div class="row text-uppercase justify-content-between">
+                    <div class="row text-uppercase justify-content-between" style="padding-left: 15px;padding-right:15px;">
                         @if(Route::currentRouteName() != 'checkout.index')
                         <ul class="col-md-5">
                             <div class="d-flex">

@@ -19,9 +19,10 @@
 
 
 <body class="@yield('body-class', '')">
-    <div id="app">
+    <div id="main">
         @include('layouts.ecom.partials.nav')
         <!-- Navigation -->
+        <router-view></router-view>
         @yield('content')
         <!-- Main-Content -->
         @include('layouts.ecom.partials.footer')
