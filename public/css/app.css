@@ -48284,6 +48284,244 @@ readers do not read off random characters that represent icons */
   color: #6cb2eb;
 }
 
+.border {
+  border: 1px solid #dee2e6;
+}
+
+.border-top {
+  border-top: 1px solid #dee2e6;
+}
+
+.border-right {
+  border-right: 1px solid #dee2e6;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #dee2e6;
+}
+
+.border-left {
+  border-left: 1px solid #dee2e6;
+}
+
+.border-top-0 {
+  border-top: 0 !important;
+}
+
+.border-right-0 {
+  border-right: 0 !important;
+}
+
+.border-bottom-0 {
+  border-bottom: 0 !important;
+}
+
+.border-left-0 {
+  border-left: 0 !important;
+}
+
+.border-x {
+  border-left: 1px solid #dee2e6 !important;
+  border-right: 1px solid #dee2e6 !important;
+}
+
+.border-y {
+  border-top: 1px solid #dee2e6 !important;
+  border-bottom: 1px solid #dee2e6 !important;
+}
+
+@media (min-width: 576px) {
+  .border-sm {
+    border: 1px solid #dee2e6;
+  }
+
+  .border-sm-top {
+    border-top: 1px solid #dee2e6;
+  }
+
+  .border-sm-right {
+    border-right: 1px solid #dee2e6;
+  }
+
+  .border-sm-bottom {
+    border-bottom: 1px solid #dee2e6;
+  }
+
+  .border-sm-left {
+    border-left: 1px solid #dee2e6;
+  }
+
+  .border-sm-top-0 {
+    border-top: 0 !important;
+  }
+
+  .border-sm-right-0 {
+    border-right: 0 !important;
+  }
+
+  .border-sm-bottom-0 {
+    border-bottom: 0 !important;
+  }
+
+  .border-sm-left-0 {
+    border-left: 0 !important;
+  }
+
+  .border-sm-x {
+    border-left: 1px solid #dee2e6 !important;
+    border-right: 1px solid #dee2e6 !important;
+  }
+
+  .border-sm-y {
+    border-top: 1px solid #dee2e6 !important;
+    border-bottom: 1px solid #dee2e6 !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .border-md {
+    border: 1px solid #dee2e6;
+  }
+
+  .border-md-top {
+    border-top: 1px solid #dee2e6;
+  }
+
+  .border-md-right {
+    border-right: 1px solid #dee2e6;
+  }
+
+  .border-md-bottom {
+    border-bottom: 1px solid #dee2e6;
+  }
+
+  .border-md-left {
+    border-left: 1px solid #dee2e6;
+  }
+
+  .border-md-top-0 {
+    border-top: 0 !important;
+  }
+
+  .border-md-right-0 {
+    border-right: 0 !important;
+  }
+
+  .border-md-bottom-0 {
+    border-bottom: 0 !important;
+  }
+
+  .border-md-left-0 {
+    border-left: 0 !important;
+  }
+
+  .border-md-x {
+    border-left: 1px solid #dee2e6 !important;
+    border-right: 1px solid #dee2e6 !important;
+  }
+
+  .border-md-y {
+    border-top: 1px solid #dee2e6 !important;
+    border-bottom: 1px solid #dee2e6 !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .border-lg {
+    border: 1px solid #dee2e6;
+  }
+
+  .border-lg-top {
+    border-top: 1px solid #dee2e6;
+  }
+
+  .border-lg-right {
+    border-right: 1px solid #dee2e6;
+  }
+
+  .border-lg-bottom {
+    border-bottom: 1px solid #dee2e6;
+  }
+
+  .border-lg-left {
+    border-left: 1px solid #dee2e6;
+  }
+
+  .border-lg-top-0 {
+    border-top: 0 !important;
+  }
+
+  .border-lg-right-0 {
+    border-right: 0 !important;
+  }
+
+  .border-lg-bottom-0 {
+    border-bottom: 0 !important;
+  }
+
+  .border-lg-left-0 {
+    border-left: 0 !important;
+  }
+
+  .border-lg-x {
+    border-left: 1px solid #dee2e6 !important;
+    border-right: 1px solid #dee2e6 !important;
+  }
+
+  .border-lg-y {
+    border-top: 1px solid #dee2e6 !important;
+    border-bottom: 1px solid #dee2e6 !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .border-xl {
+    border: 1px solid #dee2e6;
+  }
+
+  .border-xl-top {
+    border-top: 1px solid #dee2e6;
+  }
+
+  .border-xl-right {
+    border-right: 1px solid #dee2e6;
+  }
+
+  .border-xl-bottom {
+    border-bottom: 1px solid #dee2e6;
+  }
+
+  .border-xl-left {
+    border-left: 1px solid #dee2e6;
+  }
+
+  .border-xl-top-0 {
+    border-top: 0 !important;
+  }
+
+  .border-xl-right-0 {
+    border-right: 0 !important;
+  }
+
+  .border-xl-bottom-0 {
+    border-bottom: 0 !important;
+  }
+
+  .border-xl-left-0 {
+    border-left: 0 !important;
+  }
+
+  .border-xl-x {
+    border-left: 1px solid #dee2e6 !important;
+    border-right: 1px solid #dee2e6 !important;
+  }
+
+  .border-xl-y {
+    border-top: 1px solid #dee2e6 !important;
+    border-bottom: 1px solid #dee2e6 !important;
+  }
+}
+
 .cursor-alias {
   cursor: alias;
 }
@@ -48467,6 +48705,10 @@ img {
 }
 
 .breadcrumbs {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 99;
   background: #f5f5f5;
   border-bottom: 1px solid #cdcdcd;
   padding: 24px 0;
@@ -48614,7 +48856,7 @@ form button[type=submit] {
   padding: 12px 28px 12px 36px;
   border: 2px solid #e4e4e4;
   border-radius: 4px;
-  width: 300px;
+  width: 100%;
   max-width: 100%;
   box-shadow: 4px 4px 0 rgba(241, 241, 241, 0.35);
   font-size: 12px;
@@ -48707,6 +48949,19 @@ header .top-nav ul .cart-count span {
   margin-right: 6px;
 }
 
+header .top-nav ul .dropdown-menu {
+  background-color: #666666;
+}
+
+header .top-nav ul .dropdown-menu a:hover {
+  color: lightslategrey;
+}
+
+header .top-nav ul .dropdown-menu a:active {
+  color: lightsteelblue;
+  background-color: white !important;
+}
+
 ul {
   list-style-type: none;
 }
@@ -48775,21 +49030,23 @@ a:link:hover {
 
 .products .product img {
   width: auto !important;
-  height: 20vh !important;
+  height: 100px !important;
 }
 
-.product-section-image {
-  padding: 30px;
+.product-section .row {
+  margin: 0;
+  padding: 0;
 }
 
-.product-section-image img {
+.product-section .product-section-image img {
+  padding: 30px auto;
   width: auto;
-  height: 30vh;
+  height: 200px;
   opacity: 0;
   transition: opacity 0.1s ease-in-out;
 }
 
-.product-section-image img.active {
+.product-section .product-section-image img.active {
   opacity: 1;
 }
 
@@ -48923,6 +49180,36 @@ a:link:hover {
   color: darkblue;
 }
 
+@media only screen and (max-width: 768px) {
+  .auth-pages {
+    margin: 100px auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .auth-pages .left-auth {
+    padding-bottom: 50px;
+    border-bottom: 1px solid #cdcdcd;
+  }
+
+  .auth-pages .right-auth {
+    border-left: none;
+    padding-left: 0;
+  }
+
+  .register-pages {
+    margin: 100px auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  .register-pages .register {
+    text-align: center;
+    width: 75%;
+  }
+}
+
 /**
  * The CSS shown here will not be introduced in the Quickstart guide, but shows
  * how you can use CSS to style your Element's container.
@@ -48963,6 +49250,61 @@ a:link:hover {
 
 .thank-you-section h1 {
   margin-bottom: 10px;
+}
+
+.my-profile {
+  width: 75%;
+}
+
+.my-profile .user-avatar img {
+  width: 100px !important;
+  height: 100px !important;
+}
+
+.my-profile .user-name,
+.my-profile .user-email,
+.my-profile .user-password,
+.my-profile .user-confirm {
+  position: relative !important;
+  margin: 20px auto;
+}
+
+.my-profile .user-name input,
+.my-profile .user-email input,
+.my-profile .user-password input,
+.my-profile .user-confirm input {
+  padding-left: 46px;
+}
+
+.my-profile .user-name input::-moz-placeholder, .my-profile .user-email input::-moz-placeholder, .my-profile .user-password input::-moz-placeholder, .my-profile .user-confirm input::-moz-placeholder {
+  color: lightgray;
+}
+
+.my-profile .user-name input:-ms-input-placeholder, .my-profile .user-email input:-ms-input-placeholder, .my-profile .user-password input:-ms-input-placeholder, .my-profile .user-confirm input:-ms-input-placeholder {
+  color: lightgray;
+}
+
+.my-profile .user-name input::placeholder,
+.my-profile .user-email input::placeholder,
+.my-profile .user-password input::placeholder,
+.my-profile .user-confirm input::placeholder {
+  color: lightgray;
+}
+
+.my-profile .user-name i,
+.my-profile .user-email i,
+.my-profile .user-password i,
+.my-profile .user-confirm i {
+  color: gray;
+  position: absolute;
+  top: 12px;
+  left: 12px;
+}
+
+@media only screen and (max-width: 768px) {
+  .my-profile {
+    width: 100%;
+  }
 }
 
 .router-link-exact-active {

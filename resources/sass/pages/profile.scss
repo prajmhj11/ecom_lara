@@ -1,0 +1,30 @@
+.my-profile{
+    width: 75%;
+    .user-avatar{
+        img{
+            width: 100px !important;
+            height: 100px !important;
+        }
+    }
+    .user-name, .user-email, .user-password, .user-confirm{
+        position: relative !important;
+        margin: 20px auto;
+        input{
+            padding-left: 46px;
+            &::placeholder{
+                color: lightgray;
+            }
+        }
+        i{
+            color: lighten($color: #000000, $amount: 50%);
+            position: absolute;
+            top: 12px;
+            left: 12px;
+        }
+    }
+}
+@media only screen and (max-width: 768px){
+    .my-profile{
+        width: 100%;
+    }
+}

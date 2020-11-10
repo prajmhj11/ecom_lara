@@ -54,7 +54,19 @@ header{
                   margin-left:6px;
                   margin-right:6px;
                 }
-              }
+            }
+            .dropdown-menu{
+                background-color: lighten($color: #000000, $amount: 40%);
+                a{
+                    &:hover{
+                        color: lightslategrey;
+                    }
+                    &:active{
+                        color: lightsteelblue;
+                        background-color: white !important;
+                    }
+                }
+            }
         }
     }
 }

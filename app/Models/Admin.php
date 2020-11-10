@@ -12,7 +12,7 @@ class Admin extends Authenticable
     use HasFactory;
     use Notifiable;
 
-    protected $guard = 'customer';
+    protected $guard = 'admin';
 
     protected $fillable = ['name','email','password'];
 

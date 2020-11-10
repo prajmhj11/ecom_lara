@@ -18,6 +18,7 @@
 @import 'responsive';
 
 // Base
+@import 'base/border';
 @import 'base/cursor';
 @import 'base/base';
 // @import 'base/helpers';
@@ -45,6 +46,7 @@
 @import 'pages/login-register';
 @import 'pages/checkout';
 @import 'pages/thankyou';
+@import 'pages/profile';
 
 
 .router-link-exact-active{

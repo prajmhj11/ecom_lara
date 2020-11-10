@@ -17,7 +17,7 @@ class LandingPageController extends Controller
         //
         $products = Product::where('featured', true)->inRandomOrder()->paginate(6);
 
-        return view('landing-page', compact('products'));
+        return view('layouts.ecom.landing-page', compact('products'));
     }
 
 }

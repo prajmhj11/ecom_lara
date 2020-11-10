@@ -74,3 +74,29 @@
         }
     }
 }
+
+@media only screen and (max-width: 768px){
+    .auth-pages{
+        margin: 100px auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 50px;
+        .left-auth{
+            padding-bottom: 50px;
+            border-bottom: 1px solid $separator-color;
+        }
+        .right-auth{
+            border-left: none;
+            padding-left: 0;
+        }
+    }
+    .register-pages{
+        margin: 100px auto;
+        display: flex;
+        justify-content: center;
+        .register{
+            text-align: center;
+            width: 75%;
+        }
+    }
+}

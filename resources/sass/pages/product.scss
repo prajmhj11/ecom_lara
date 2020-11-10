@@ -1,14 +1,19 @@
-
-.product-section-image {
-    padding: 30px;
-    img{
-        width: auto;
-        height: 30vh;
-        opacity: 0;
-        transition: opacity .10s ease-in-out;
+.product-section{
+    .row{
+        margin: 0;
+        padding: 0;
     }
-    img.active{
-        opacity: 1;
+    .product-section-image {
+        img{
+            padding: 30px auto;
+            width: auto;
+            height: 200px;
+            opacity: 0;
+            transition: opacity .10s ease-in-out;
+        }
+        img.active{
+            opacity: 1;
+        }
     }
 }
 .product-section-images{

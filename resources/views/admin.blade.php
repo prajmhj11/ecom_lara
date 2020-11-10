@@ -21,14 +21,10 @@
     <body>
         @if (Route::has('login'))
             <div class="strip d-flex justify-content-end px-4 py-3 bg-dark">
-                @auth
+                @auth('admin')
                     <a href="{{ url('/home') }}" class="text-md text-white">Home</a>
                 @else
-                    <a href="{{ route('login') }}" class="text-md text-white">Login</a>
-
-                    @if (Route::has('register'))
-                        <a href="{{ route('register') }}" class="ml-4 text-md text-white">Register</a>
-                    @endif
+                    <a href="{{ route('admin.login') }}" class="text-md text-white">Login</a>
                 @endif
             </div>
         @endif

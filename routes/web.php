@@ -15,6 +15,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [App\Http\Controllers\LandingPageController::class, 'index'])->name('landing-page');
+
+Route::get('/admin-login', [App\Http\Controllers\Auth\AdminLoginController::class, 'showLoginForm'])->name('admin.login');
+Route::post('/admin-login', [App\Http\Controllers\Auth\AdminLoginController::class, 'login'])->name('admin.login.submit');
+
+// Products
 Route::get('/shop', [App\Http\Controllers\ShopController::class, 'index'])->name('shop.index');
 Route::get('/shop/{product}', [App\Http\Controllers\ShopController::class, 'show'])->name('shop.show');
 
@@ -56,6 +61,12 @@ Route::get('/about', function() {
     return view('layouts.ecom.about');
 });
 
+// Profile
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('my-profile', [App\Http\Controllers\UsersController::class, 'edit'])->name('users.edit');
+    Route::patch('my-profile', [App\Http\Controllers\UsersController::class, 'update'])->name('users.update');
+    Route::get('my-orders', [App\Http\Controllers\OrdersController::class, 'index'])->name('orders.index');
+});
 Auth::routes();
 
 
@@ -69,7 +80,7 @@ Route::get('/adminpanel', function () {
 });
 
 
-Route::group([], function () {
+Route::group(['middleware' => 'auth:admin'], function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::get('/profile', [App\Http\Controllers\HomeController::class, 'index'])->name('profile');
     Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');

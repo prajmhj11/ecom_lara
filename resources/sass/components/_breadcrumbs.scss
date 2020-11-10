@@ -1,4 +1,7 @@
 .breadcrumbs {
+    position: sticky;
+    top: 0;
+    z-index: 99;
     background: $light-gray-background;
     border-bottom: 1px solid $separator-color;
     padding: 24px 0;

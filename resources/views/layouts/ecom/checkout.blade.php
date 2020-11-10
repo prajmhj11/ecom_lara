@@ -13,7 +13,7 @@
 
         <h1 class="checkout-heading stylish-heading">Checkout</h1>
         <div class="checkout-section row m-0 p-0">
-            <div class="checkout-table-details col-md-6 order-1 order-md-0 m-0 border-md-right bg-light pb-2">
+            <div class="checkout-table-details col-md-5 order-1 order-md-0 m-0 border-md-right bg-light pb-2">
                 <form action="{{ route('checkout.store') }}" id="payment-form" method="POST">
                     @csrf
                     <h2>Billing Details</h2>
