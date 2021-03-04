@@ -34,5 +34,16 @@
     var scroll = $(window).scrollTop();
     $('html').scrollTop(scroll);
 </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-78RC58WDJS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-78RC58WDJS');
+</script>
+
 @yield('extra-js')
 </html>
