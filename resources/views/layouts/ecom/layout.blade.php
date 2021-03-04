@@ -15,6 +15,8 @@
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
         @yield('extra-css')
+
+        <script data-ad-client="ca-pub-4004793749790530" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     </head>
 
 
