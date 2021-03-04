@@ -21,18 +21,18 @@
                 </div>
         @endif
         <div class="row my-5">
-            <div class="col-4 sidebar text-center text-md-left">
+            <div class="col-md-2 sidebar text-center text-md-left">
                 <ul>
                     <li class="active"><a href="{{ route('users.edit') }}">My Profile</a></li>
                     <li><a href="{{route('orders.index')}}">My orders</a></li>
                 </ul>
 
             </div> <!-- end sidebar -->
-            <div class="col-8 my-2 border-left">
+            <div class="col-md-10 my-2 border-md-left">
                 <div class="my-profile-header d-flex flex-column flex-md-row justify-content-between mb-5 pb-2 border-bottom">
                     <h3 class="stylish-heading">My Profile</h3>
                 </div>
-                <div class="my-profile">
+                <div class="my-profile ml-md-5">
                     <form action="{{route('users.update')}}" method="post" autocomplete="off">
                         @csrf
                         @method('patch')

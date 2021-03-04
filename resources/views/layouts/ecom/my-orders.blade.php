@@ -21,19 +21,60 @@
                 </div>
         @endif
         <div class="row my-5">
-            <div class="col-4 sidebar text-center text-md-left">
+            <div class="col-md-2 sidebar text-center text-md-left">
                 <ul>
                     <li><a href="{{ route('users.edit') }}">My Profile</a></li>
                     <li class="active"><a href="{{route('orders.index')}}">My orders</a></li>
                 </ul>
 
             </div> <!-- end sidebar -->
-            <div class="col-8 my-2 border-left">
+            <div class="col-md-10 my-2 border-md-left">
                 <div class="my-profile-header d-flex flex-column flex-md-row justify-content-between mb-5 pb-2 border-bottom">
                     <h3 class="stylish-heading">My Orders</h3>
                 </div>
-                <div class="my-profile">
+                <div class="my-orders">
+                @foreach ($orders as $order)
+                    <div class="order-container">
+                        <div class="order-header">
+                            <div class="order-header-items">
+                                <div>
+                                    <div class="text-uppercase text-bold">Order Placed</div>
+                                    <div>{{ presentDate($order->created_at) }}</div>
+                                </div>
+                                <div>
+                                    <div class="text-uppercase text-bold">Order ID</div>
+                                    <div>{{ $order->id }}</div>
+                                </div><div>
+                                    <div class="text-uppercase text-bold">Total</div>
+                                    <div>{{ presentPrice($order->billing_total) }}</div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="order-header-items">
+                                    <div><a href="{{ route('orders.show', $order->id) }}">Order Details</a></div>
+                                    <div>|</div>
+                                    <div><a href="#">Invoice</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="order-products">
+                            @foreach ($order->products as $product)
+                                <div class="order-product-item">
+                                    <div><img src="{{ asset('storage/'.$product->image) }}" alt="Product Image"></div>
+                                    <div>
+                                        <div>
+                                            <a href="{{ route('shop.show', $product->slug) }}">{{ $product->name }}</a>
+                                        </div>
+                                        <div>{{ presentPrice($product->price) }}</div>
+                                        <div>Quantity: {{ $product->pivot->quantity }}</div>
+                                    </div>
+                                </div>
+                            @endforeach
 
+                        </div>
+                    </div> <!-- end order-container -->
+                @endforeach
+                {{ $orders->links() }}
                 </div>
             </div>
         </div>

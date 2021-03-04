@@ -49038,10 +49038,15 @@ a:link:hover {
   padding: 0;
 }
 
+.product-section .product-section-image {
+  height: 30vh;
+  width: auto;
+}
+
 .product-section .product-section-image img {
   padding: 30px auto;
   width: auto;
-  height: 200px;
+  height: 100px;
   opacity: 0;
   transition: opacity 0.1s ease-in-out;
 }
@@ -49305,6 +49310,48 @@ a:link:hover {
   .my-profile {
     width: 100%;
   }
+}
+
+.my-orders .order-container {
+  overflow-x: scroll;
+  margin-bottom: 64px;
+}
+
+.my-orders .order-header {
+  background: #F6F6F6;
+  border: 1px solid #DDDDDD;
+  padding: 14px;
+  min-width: 600px;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.my-orders .order-products {
+  background: white;
+  border: 1px solid #DDDDDD;
+  border-top: none;
+  max-width: 100%;
+  padding: 14px;
+}
+
+.my-orders .order-header-items {
+  display: flex;
+}
+
+.my-orders .order-header-items div {
+  margin-right: 14px;
+}
+
+.my-orders .order-product-item {
+  display: flex;
+  margin: 32px 0;
+}
+
+.my-orders .order-product-item img {
+  max-width: 140px;
+  margin-right: 24px;
 }
 
 .router-link-exact-active {

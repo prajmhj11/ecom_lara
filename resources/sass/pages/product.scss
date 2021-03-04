@@ -4,10 +4,12 @@
         padding: 0;
     }
     .product-section-image {
+        height: 30vh;
+        width: auto;
         img{
             padding: 30px auto;
             width: auto;
-            height: 200px;
+            height: 100px;
             opacity: 0;
             transition: opacity .10s ease-in-out;
         }

@@ -73,7 +73,7 @@
                 </form>
             </div>
             <!-- end billing-details -->
-            <div class="checkout-table-container col-md-6 order-0 order-md-1 text-center m-0">
+            <div class="checkout-table-container col-md-6 col-md-offset-1 order-0 order-md-1 text-center m-0">
                 <h2 class="text-left">Your Order</h2>
                 @foreach(\Cart::content() as $item)
                 <div class="checkout-table">

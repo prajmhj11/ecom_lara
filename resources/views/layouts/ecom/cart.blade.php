@@ -106,7 +106,7 @@
 
                 <div class="cart-buttons my-1 btn-group">
                     <a href="{{ route('shop.index') }}" class="button mr-2">Continue Shopping</a>
-                    <a href="{{ route('checkout.index') }}" target="_blank" class="button-primary">Proceed to Checkout</a>
+                    <a href="{{ route('checkout.index') }}" class="button-primary">Proceed to Checkout</a>
                 </div>
             @else
                 <h2>No items in Shopping Cart</h2>

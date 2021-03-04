@@ -22,7 +22,7 @@
     @include('layouts.ecom.partials.alert')
         <div class="row">
             <div class="col-md-5 row d-flex align-items-center justify-content-center">
-                <div class="product-section-image col-12 text-center border">
+                <div class="product-section-image col-12 text-center border d-flex justify-content-center align-items-center">
                     <img src="{{ Voyager::image($product->image) }}" alt="{{ $product->slug }}"
                         id="currentImage" class="active" onerror="this.onerror=null;this.src=`{{asset('img/not-found.jpg')}}`;">
                 </div>

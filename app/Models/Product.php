@@ -37,6 +37,11 @@ class Product extends Model
         return $this->belongsToMany('App\Models\Category');
     }
 
+    public function orders()
+    {
+        return $this->belongsToMany('App\Models\Order');
+    }
+
     public function presentPrice()
     {
         return '$'. number_format($this->price/100, 2);

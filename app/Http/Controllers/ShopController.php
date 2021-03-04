@@ -17,7 +17,7 @@ class ShopController extends Controller
     public function index()
     {
         //
-        $pagination = 6;
+        $pagination = 12;
         $categories = Category::all();
 
         if(!(request()->page)){
@@ -29,6 +29,7 @@ class ShopController extends Controller
             $products = Product::with('categories')->whereHas('categories', function($query){
                 $query->where('slug', request()->category);
             });
+            // use optional to prevent from 'NULL' error;
             $categoryName = optional($categories->where('slug', request()->category)->first())->name;
         }elseif(request()->all_products){
             $products = Product::take(12);
@@ -66,7 +67,7 @@ class ShopController extends Controller
     public function search(Request $request)
     {
         $request->validate([
-            'query' => 'required|min:3'
+            'query' => 'required|string'
         ]);
         $query = $request->input('query');
         // $products = Product::where('name', 'like', "%$query%")->paginate(10);

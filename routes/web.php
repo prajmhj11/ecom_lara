@@ -16,8 +16,25 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [App\Http\Controllers\LandingPageController::class, 'index'])->name('landing-page');
 
-Route::get('/admin-login', [App\Http\Controllers\Auth\AdminLoginController::class, 'showLoginForm'])->name('admin.login');
-Route::post('/admin-login', [App\Http\Controllers\Auth\AdminLoginController::class, 'login'])->name('admin.login.submit');
+Route::group(['prefix' => 'adminpanel'], function () {
+    // Admin-------
+    Route::get('/', function () {
+        return view('admin');
+    });
+    // Login and logout
+    Route::get('login', [App\Http\Controllers\Auth\AdminLoginController::class, 'showLoginForm'])->name('admin.login');
+    Route::post('login', [App\Http\Controllers\Auth\AdminLoginController::class, 'login'])->name('admin.login.submit');
+    Route::post('logout', [App\Http\Controllers\Auth\AdminLoginController::class, 'logout'])->name('admin.logout')->middleware('auth:admin');
+    // Password reset routes
+    Route::post('password/email', [App\Http\Controllers\Auth\AdminForgotPasswordController::class, 'sendResetLinkEmail'])->name('admin.password.email');
+    Route::get('password/reset', [App\Http\Controllers\Auth\AdminForgotPasswordController::class, 'showLinkRequestForm'])->name('admin.password.request');
+    Route::post('password/reset', [App\Http\Controllers\Auth\AdminForgotPasswordController::class, 'reset']);
+    Route::get('password/reset/{token}', [App\Http\Controllers\Auth\AdminForgotPasswordController::class, 'showResetForm'])->name('admin.password.reset');
+});
+
+
+
+Route::post('/user-logout', [App\Http\Controllers\Auth\LoginController::class, 'userlogout'])->name('user.logout')->middleware('auth');
 
 // Products
 Route::get('/shop', [App\Http\Controllers\ShopController::class, 'index'])->name('shop.index');
@@ -66,6 +83,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('my-profile', [App\Http\Controllers\UsersController::class, 'edit'])->name('users.edit');
     Route::patch('my-profile', [App\Http\Controllers\UsersController::class, 'update'])->name('users.update');
     Route::get('my-orders', [App\Http\Controllers\OrdersController::class, 'index'])->name('orders.index');
+    Route::get('my-order/{id}', [App\Http\Controllers\OrdersController::class, 'show'])->name('orders.show');
 });
 Auth::routes();
 
@@ -74,12 +92,9 @@ Auth::routes();
 Route::get('/search', [App\Http\Controllers\ShopController::class, 'search'])->name('search');
 Route::get('/search-algolia', [App\Http\Controllers\ShopController::class, 'searchAlgolia'])->name('search-algolia');
 
-// Admin-------
-Route::get('/adminpanel', function () {
-    return view('admin');
-});
 
 
+// Vue Templates Route
 Route::group(['middleware' => 'auth:admin'], function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::get('/profile', [App\Http\Controllers\HomeController::class, 'index'])->name('profile');
@@ -87,6 +102,14 @@ Route::group(['middleware' => 'auth:admin'], function () {
     Route::get('/users', [App\Http\Controllers\HomeController::class, 'index'])->name('users');
     Route::get('/developer', [App\Http\Controllers\HomeController::class, 'index'])->name('developer');
 });
+
+// Vayoger Admin
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
+
+
+
 /* Payment Integration (E-sewa, Fonepay)
 
     // Route::get('/products', [App\Http\Controllers\ProductController::class, 'list'])->name('products');
@@ -99,12 +122,3 @@ Route::group(['middleware' => 'auth:admin'], function () {
     // Route::any('fonepay/return', 'App\Http\Controllers\FonepayController@fonepay_response')->name('fonepay.return');
     // // Route::get('/{any}', [App\Http\Controllers\HomeController::class, 'index'])->where('any', '.*');
 */
-
-// Vayoger Admin
-Route::group(['prefix' => 'admin'], function () {
-    Voyager::routes();
-});
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

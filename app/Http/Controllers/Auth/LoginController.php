@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -22,6 +23,16 @@ class LoginController extends Controller
     use AuthenticatesUsers;
 
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('guest')->except('userlogout');
+    }
+
+    /**
      * Show the application's login form.
      *
      * @return \Illuminate\View\View
@@ -30,21 +41,38 @@ class LoginController extends Controller
     {
         return view('layouts.ecom.auth.login');
     }
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
-    protected $redirectTo = RouteServiceProvider::HOME;
-
 
     /**
-     * Create a new controller instance.
+     * Send the response after the user was authenticated.
      *
-     * @return void
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\JsonResponse
      */
-    public function __construct()
+    protected function sendLoginResponse(Request $request)
     {
-        $this->middleware('guest')->except('logout');
+        $request->session()->regenerate();
+
+        $this->clearLoginAttempts($request);
+
+        if ($response = $this->authenticated($request, $this->guard()->user())) {
+            return $response;
+        }
+
+        return $request->wantsJson()
+                    ? new JsonResponse([], 204)
+                    : redirect()->back();
+    }
+
+
+    public function userlogout(Request $request)
+    {
+        $this->guard()->logout();
+
+        \Cart::destroy();
+        $request->session()->regenerateToken();
+
+        return $request->wantsJson()
+            ? new JsonResponse([], 204)
+            : redirect('/');
     }
 }
